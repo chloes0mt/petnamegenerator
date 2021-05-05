@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <title>Pet Name Generator</title>
+    <link href="petnamegenerator.css" rel="stylesheet" type="text/css">
+  </head>
+<body>
+	<br>
+	<br>
+	<br>
+	<br>
+	<center><p style="font-size: 23px; color: #ECEC93">Keep clicking each button until you get a name you like!</p></center>
+	<br>
+	<br>
+	<center><h1>Pet Name</h1></center>
+	<br>
+	<br>
+	<center><h2>Generator</h2></center>
+    <br>
+    <br>
+    <center>
+    <div class="container">
+    <p><button id="btn-hero" onClick="pigNames()">Guinea Pig</button><span id="span"></span></p>
+    <br>
+    <p><button id="btn-hero" onClick="rabbitNames()">Rabbit</button><span id="span2"></span></p>
+    <br>
+    <p><button id="btn-hero" onClick="hamsterNames()">Hamster</button><span id="span3"></span></p>
+    <br>
+    <p><button id="btn-hero" onClick="geckoNames()">Gecko</button><span id="span5"></span></p>
+    <br>
+    <p><button id="btn-hero" onClick="beardieNames()">Bearded Dragon</button><span id="span8"></span></p>
+    <br>
+    <p><button id="btn-reset" onClick="reset()">Reset All</button></p>
+    </div>
+    </center>
+    <br>
+    <br>
+    
+    <script>
+        
+        pigs = ["Beadoo", "Dee Doo", "Bub", "Bubby", "Reginald", "Mango", "Armin", "Eren", "Levi", "Sebastian",
+        "Luke", "Leia", "Ben", "Gabby", "Barbara", "Nicki", "Drake", "Nosey", "Murphy", "Ximena/o", "Charlie",
+        "Eden", "Steven", "Eloise", "Ciel"];
+        rabbits = ["Parker", "Ember", "Valerie", "Sakura", "Queso", "Pedro", "Hop", "Trisha", "Fabio", "Baccio",
+        "Luca", "Remi", "David", "Robin", "Maron", "Sora", "Usagi", "Cornelius", "Bonita/o", "Tortilla", "Future",
+        "Dulce", "Jose", "Amante", "Mateo"];
+        hamsters = ["Lucy", "Ruby", "Maximilian", "Cooper", "Daisy", "Lunita/o", "Nula/o", "Spaghetti", "Calamari",
+        "Kendrick", "Bobby", "Benjiro", "Daiko", "Mosey", "Marlon", "Chika", "Linda", "Jongtae", "Leeroy", "Brower",
+        "Booster", "Emilia", "Sodapop", "Cheesecake", "Sammy", "Nahmir"];
+        geckos = ["Fuego", "Swae", "Donna", "Conquistador", "Chizu", "Primavera", "Diego", "Aradano/a", "Fresca",
+        "Adam", "Nikola", "Niko", "Noah", "Brittany", "Dixie", "Shiloh", "Riley", "Twix", "Mars", "Mac", "Lechuga",
+        "Blu", "Trey", "Panos", "Jessalyn"];
+        beardies = ["Chorizo", "Bowser", "Queso", "Pancake", "Torta", "Corey", "Dilly", "Zoe", "Elaine", "Mara",
+        "Roberto", "Hermoso/a", "Oaklee", "Odessa", "Odessy", "Grace", "Abe", "Agnes", "Aiden", "Abel", "Jonah", "Talia",
+        "Tamar", "Hilda", "Blake"];
+        
+        function pigNames() {
+            let r = Math.floor(Math.random() * pigs.length);
+            document.getElementById("span").innerHTML = pigs[r];
+        }
+        
+        function rabbitNames() {
+            let r = Math.floor(Math.random() * rabbits.length);
+            document.getElementById("span2").innerHTML = rabbits[r];
+        }
+        
+        function hamsterNames() {
+            let r = Math.floor(Math.random() * hamsters.length);
+            document.getElementById("span3").innerHTML = hamsters[r];
+        }
+        
+        function geckoNames() {
+            let r = Math.floor(Math.random() * geckos.length);
+            document.getElementById("span5").innerHTML = geckos[r];
+        }
+        
+        function beardieNames() {
+            let r = Math.floor(Math.random() * beardies.length);
+            document.getElementById("span8").innerHTML = beardies[r];
+        }
+        
+        function reset() {
+        	document.getElementById("span").innerHTML = " ";
+        	document.getElementById("span2").innerHTML = " ";
+        	document.getElementById("span3").innerHTML = " ";
+        	document.getElementById("span5").innerHTML = " ";
+        	document.getElementById("span8").innerHTML = " ";
+        }
+        
+        
+    </script>
+</body>
+</html>
