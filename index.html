@@ -21,15 +21,13 @@
     <br>
     <center>
     <div class="container">
-    <p><button id="btn-hero" onClick="pigNames()">Guinea Pig</button><span id="span"></span></p>
+    <p><button id="btn-hero" name="animal" value="pig">Guinea Pig</button><span id="span"></span></p>
     <br>
-    <p><button id="btn-hero" onClick="rabbitNames()">Rabbit</button><span id="span2"></span></p>
+    <p><button id="btn-hero" name="animal" value="rabbit">Rabbit</button><span id="span2"></span></p>
     <br>
-    <p><button id="btn-hero" onClick="hamsterNames()">Hamster</button><span id="span3"></span></p>
+    <p><button id="btn-hero" name="animal" value="gecko">Gecko</button><span id="span5"></span></p>
     <br>
-    <p><button id="btn-hero" onClick="geckoNames()">Gecko</button><span id="span5"></span></p>
-    <br>
-    <p><button id="btn-hero" onClick="beardieNames()">Bearded Dragon</button><span id="span8"></span></p>
+    <p><button id="btn-hero" name="animal" value="dragon">Bearded Dragon</button><span id="span8"></span></p>
     <br>
     <p><button id="btn-reset" onClick="reset()">Reset All</button></p>
     </div>
@@ -45,17 +43,54 @@
         rabbits = ["Parker", "Ember", "Valerie", "Sakura", "Queso", "Pedro", "Hop", "Trisha", "Fabio", "Baccio",
         "Luca", "Remi", "David", "Robin", "Maron", "Sora", "Usagi", "Cornelius", "Bonita/o", "Tortilla", "Future",
         "Dulce", "Jose", "Amante", "Mateo"];
-        hamsters = ["Lucy", "Ruby", "Maximilian", "Cooper", "Daisy", "Lunita/o", "Nula/o", "Spaghetti", "Calamari",
-        "Kendrick", "Bobby", "Benjiro", "Daiko", "Mosey", "Marlon", "Chika", "Linda", "Jongtae", "Leeroy", "Brower",
-        "Booster", "Emilia", "Sodapop", "Cheesecake", "Sammy", "Nahmir"];
         geckos = ["Fuego", "Swae", "Donna", "Conquistador", "Chizu", "Primavera", "Diego", "Aradano/a", "Fresca",
         "Adam", "Nikola", "Niko", "Noah", "Brittany", "Dixie", "Shiloh", "Riley", "Twix", "Mars", "Mac", "Lechuga",
         "Blu", "Trey", "Panos", "Jessalyn"];
         beardies = ["Chorizo", "Bowser", "Queso", "Pancake", "Torta", "Corey", "Dilly", "Zoe", "Elaine", "Mara",
         "Roberto", "Hermoso/a", "Oaklee", "Odessa", "Odessy", "Grace", "Abe", "Agnes", "Aiden", "Abel", "Jonah", "Talia",
         "Tamar", "Hilda", "Blake"];
+	    
+	document.addEventListener("DOMContentLoaded", function(event) {
+
+  	// Put the button into a variable
+  	var b = document.getElementById("btn-hero");
+  
+  	// Wait for user to click the button
+  	b.addEventListener( "change", function() {
+  
+    	// Put the selected value into a variable
+    	var animal = this.animal.value;
+    
+    	// The "Switch" statement.
+    	switch ( myAnimal ) {
+    
+    	case "pig":
+      		let r = Math.floor(Math.random() * pigs.length);
+            	document.getElementById("span").innerText = pigs[r];
+      		break;
+
+    	case "rabbit":
+      		let r = Math.floor(Math.random() * rabbits.length);
+            	document.getElementById("span").innerText = rabbits[r];
+      		break;
+			
+	case "gecko":
+      		let r = Math.floor(Math.random() * geckos.length);
+            	document.getElementById("span").innerText = geckos[r];
+      		break;
+
+    	case "dragon":
+      		let r = Math.floor(Math.random() * beardies.length);
+            	document.getElementById("span").innerText = beardies[r];
+      		break;
+      
+    	      }
+  	    }, false);
+	});
+	    
+	
         
-        function pigNames() {
+        /* function pigNames() {
             let r = Math.floor(Math.random() * pigs.length);
             document.getElementById("span").innerHTML = pigs[r];
         }
@@ -79,13 +114,14 @@
             let r = Math.floor(Math.random() * beardies.length);
             document.getElementById("span8").innerHTML = beardies[r];
         }
+	*/
         
         function reset() {
-        	document.getElementById("span").innerHTML = " ";
-        	document.getElementById("span2").innerHTML = " ";
-        	document.getElementById("span3").innerHTML = " ";
-        	document.getElementById("span5").innerHTML = " ";
-        	document.getElementById("span8").innerHTML = " ";
+        	document.getElementById("span").innerText = " ";
+        	document.getElementById("span2").innerText = " ";
+        	document.getElementById("span3").innerText = " ";
+        	document.getElementById("span5").innerText = " ";
+        	document.getElementById("span8").innerText = " ";
         }
         
         
